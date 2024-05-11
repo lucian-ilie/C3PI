@@ -7,8 +7,8 @@ This directory is intended to contain large files necessary for running various 
 
 In order to facilitate easy access and maintain efficiency, we have hosted these large files on an external server. Please use the link below to download the model files you need:
 
-🌐 [Human Interactome pairs](http://c3pi.csd.uwo.ca/hinteractome)
-🌐 [Streptomyces venezuelae pairs](http://c3pi.csd.uwo.ca/Svenezuelae)
+🌐 [Human Interactome Results](http://c3pi.csd.uwo.ca/hinteractomere)
+🌐 [Streptomyces venezuelae Results](http://c3pi.csd.uwo.ca/Svenezuelaere)
 
 ## How to Use the Files
 
