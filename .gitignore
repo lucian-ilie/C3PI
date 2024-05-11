@@ -1,0 +1,4 @@
+dataset/pairs/interactome.tsv
+dataset/pairs/S_venezuelae.tsv
+results/completeInteractome.csv         
+results/completeInteractomeSpecies.csv
