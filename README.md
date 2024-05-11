@@ -100,22 +100,22 @@ C3PI/
 │
 ├── dataset/
 │   ├── embd/
-|   |   ├── ecoli/  
-|   |   ├── fly/  
-|   |   ├── human/  
-|   |   ├── interactome/  
-|   |   ├── mouse/  
-|   |   ├── plasminogens/  
-|   |   ├── S_venezuelae/  
-|   |   ├── worm/  
-|   |   └── yeast/
-|   ├── pairs/
+│   │   ├── ecoli/  
+│   │   ├── fly/  
+│   │   ├── human/  
+│   │   ├── interactome/  
+│   │   ├── mouse/  
+│   │   ├── plasminogens/  
+│   │   ├── S_venezuelae/  
+│   │   ├── worm/  
+│   │   └── yeast/
+│   ├── pairs/
 │   └── seq/
 │  
 │
 ├── models/
 │   ├── README.md
-|   ├── CNN1D.weight
+│   ├── CNN1D.weight
 │   └── CNN2D.weight
 │
 └── results/
