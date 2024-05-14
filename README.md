@@ -131,7 +131,7 @@ C3PI/
 
 ### Python Dependencies
 
-To install all required Python libraries, you'll need to activate the respective virtual environments and install the libraries listed in the `requirements_embd.txt` and `requirements_ppi.txt` files. These dependencies ensure that the code executes properly.
+To install all required Python libraries, you'll need to activate the respective virtual environments and install the libraries listed in the `requirements_embed.txt` and `requirements_main.txt` files. These dependencies ensure that the code executes properly.
 
 Here's a brief overview of some key dependencies:
 
