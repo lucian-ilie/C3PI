@@ -26,7 +26,7 @@ To run the code, follow these steps:
     cd C3PI
     ```
 
-2. Create virtual environments for Python 3.10 (ppiENV) and Python 3.8 (embdENV):
+2. Create virtual environments for Python 3.10 (mainENV) and Python 3.8 (embedENV):
 
     ```bash
     python3.10 -m venv mainENV
@@ -36,8 +36,8 @@ To run the code, follow these steps:
     Activate the virtual environments:
 
     ```bash
-    source ppiENV/bin/activate
-    source embdENV/bin/activate
+    source mainENV/bin/activate
+    source embedENV/bin/activate
     ```
 
 3. Install dependencies for embedENV:
