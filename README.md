@@ -29,8 +29,8 @@ To run the code, follow these steps:
 2. Create virtual environments for Python 3.10 (ppiENV) and Python 3.8 (embdENV):
 
     ```bash
-    python3.10 -m venv ppiENV
-    python3.8 -m venv embdENV
+    python3.10 -m venv mainENV
+    python3.8 -m venv embedENV
     ```
 
     Activate the virtual environments:
@@ -40,10 +40,10 @@ To run the code, follow these steps:
     source embdENV/bin/activate
     ```
 
-3. Install dependencies for embdENV:
+3. Install dependencies for embedENV:
 
     ```bash
-    pip install -r requirements_embd.txt
+    pip install -r requirements_embed.txt
     ```
 
     Run the script for computing embeddings:
@@ -52,10 +52,10 @@ To run the code, follow these steps:
     python embedCreatorT5Functional.py
     ```
 
-4. Install dependencies for ppiENV:
+4. Install dependencies for mailENV:
 
     ```bash
-    pip install -r requirements_ppi.txt
+    pip install -r requirements_main.txt
     ```
 
     Train the model using either:
