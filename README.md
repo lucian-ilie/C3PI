@@ -11,8 +11,7 @@
 
 ## Introduction
 
-C3PI is a protein-protein interaction prediction model that combines Contextual embbeding, 
-Jigsaw puzzles and ensumble architecture together.
+C3PI is a protein-protein interaction prediction model that combines contextual embedding, Jigsaw puzzles, and ensemble architecture together.
 
 
 ## Getting Started
@@ -88,13 +87,13 @@ To run the code, follow these steps:
 
 8. `evaluation.py` computes metrics for model predictions.
 
-9. `curvePlot.py` used to plot ROC an PR curves.
-  
+9. `curvePlot.py` is used to plot ROC and PR curves.  
 
 Feel free to explore, and if you encounter any issues, refer to the documentation or reach out for assistance.
    
 
 ## Project Structure
+
 ```bash
 C3PI/
 │
