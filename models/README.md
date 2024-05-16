@@ -7,9 +7,9 @@ This directory is intended to contain large model files necessary for running va
 
 In order to facilitate easy access and maintain efficiency, we have hosted these large files on an external server. Please use the link below to download the model files you need:
 
-🌐 [CNN1D](http://c3pi.csd.uwo.ca/archive/CNN1D)
+🌐 [CNN1D](http://c3pi.csd.uwo.ca/archive/CNN1D) _(File size ~ 800MB)_
 
-🌐 [CNN2D](http://c3pi.csd.uwo.ca/archive/CNN2D)
+🌐 [CNN2D](http://c3pi.csd.uwo.ca/archive/CNN2D) _(File size ~ 1GB)_
 
 ## How to Use the Model Files
 
