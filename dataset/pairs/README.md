@@ -1,18 +1,19 @@
 # Files Directory
 
+This directory contains the pairs that have been used in the study.
 
-This directory is intended to contain large files necessary for running various parts of our application. Due to their substantial size, these files are not hosted directly within this GitHub repository.
+## Human Interactome Pairs and Streptomyces venezuelae Pairs
+
+We have provided the Human Interactome pairs and Streptomyces venezuelae pairs alongside their predictions in the `results` directory. Users who are only concerned about the pairs can download those files and drop the prediction column to obtain just the pairs.
 
 ## Accessing the Files
 
-In order to facilitate easy access and maintain efficiency, we have hosted these large files on an external server. Please use the link below to download the model files you need:
-
-🌐 [Human Interactome pairs](http://c3pi.csd.uwo.ca/hinteractome)
-
-🌐 [Streptomyces venezuelae pairs](http://c3pi.csd.uwo.ca/Svenezuelae)
+In order to facilitate easy access and maintain efficiency, we have hosted these large files on an external server.
 
 ## How to Use the Files
 
-After downloading thefiles from the above link, please follow the setup instructions provided in the main repository's `README.md` to properly integrate these files with the rest of the application.
+After downloading the files, please follow the setup instructions provided in the main repository's `README.md` to properly integrate these files with the rest of the application.
 
+## Additional Information
 
+For detailed information and download links, please refer to the `results` directory.
