@@ -52,7 +52,7 @@ To run the code, follow these steps:
     python embedCreatorT5Functional.py
     ```
 
-4. Install dependencies for mailENV:
+4. Install dependencies for mainENV:
 
     ```bash
     pip install -r requirements_main.txt
