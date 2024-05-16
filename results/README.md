@@ -7,9 +7,9 @@ This directory is intended to contain large files necessary for running various 
 
 In order to facilitate easy access and maintain efficiency, we have hosted these large files on an external server. Please use the link below to download the model files you need:
 
-🌐 [Human Interactome Results](http://c3pi.csd.uwo.ca/archive/hinteractome) _(File size: 12GB)_
+🌐 [Human Interactome Results](http://c3pi.csd.uwo.ca/archive/hinteractome) _(File size: 3.2GB)_
 
-🌐 [Streptomyces venezuelae Results](http://c3pi.csd.uwo.ca/archive/svenezuelae)
+🌐 [Streptomyces venezuelae Results](http://c3pi.csd.uwo.ca/archive/svenezuelae) _(File size: 222MB)_
 
 ## How to Use the Files
 
