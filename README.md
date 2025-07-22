@@ -1,148 +1,78 @@
-# C3PI
+# C3PI: Protein-Protein Interaction Prediction
 
-## Table of Contents
+This repository contains code for **C3PI**, a deep learning framework designed for protein-protein interaction (PPI) prediction using protein sequence embeddings. The project integrates advanced embedding models, multi-scale convolutional neural networks, and robust evaluation pipelines to predict interactions between proteins.
 
-- [Introduction](#introduction)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Dependencies](#dependencies)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+---
 
-## Introduction
+## Repository Structure
+```
+├── c3pi
+│ ├── c3pi.py # Core model definition (FullPPIModel and building blocks)
+│ ├── dataloader.py # Dataset classes and data loading utilities
+│ ├── embedder.py # Sequence embedding generation using ProtTransT5XLU50Embedder
+│ ├── init.py
+│ ├── predict.py # Prediction utilities (not detailed here)
+│ ├── train.py # Training and validation functions
+│ └── utils.py # Evaluation metrics, averaging, and embedding cleanup utilities
+├── configs
+│ └── config_gold.yaml # YAML configuration file with dataset paths and training parameters
+├── data
+│ ├── permutations.npy # Precomputed permutations used for puzzler
+│ └── permute.py # Script to generate diverse permutations with max Hamming distance
+├── scripts
+│ ├── run_embedder.py # Script to generate embeddings from FASTA sequences based on config
+│ ├── run_evaluation.py # Script to average predictions and evaluate model performance
+│ ├── run_prediction.py # Script for running model inference
+│ └── run_training.py # Script to train the FullPPIModel using dataset and config
+├── slurm_configs
+│ ├── embed.sh # SLURM batch script for embedding generation
+│ ├── predict.sh # SLURM batch script for prediction
+│ └── train.sh # SLURM batch script for training
+└── README.md # This file
+```
 
-C3PI is a protein-protein interaction prediction model that combines contextual embedding, Jigsaw puzzles, and ensemble architecture together.
 
+---
 
-## Getting Started
+## Setup and Requirements
 
-To run the code, follow these steps:
+- Python 3.8+
+- PyTorch
+- Bio-embeddings (`bio-embeddings` package)
+- scikit-learn
+- PyYAML
+- TensorBoard (optional, for training logs)
 
-1. Clone the repository to your Linux machine:
-
-    ```bash
-    git clone https://github.com/lucian-ilie/C3PI.git
-    cd C3PI
-    ```
-
-2. Create virtual environments for Python 3.10 (mainENV) and Python 3.8 (embedENV):
-
-    ```bash
-    python3.10 -m venv mainENV
-    python3.8 -m venv embedENV
-    ```
-
-    Activate the virtual environments:
-
-    ```bash
-    source mainENV/bin/activate
-    source embedENV/bin/activate
-    ```
-
-3. Install dependencies for embedENV:
-
-    ```bash
-    pip install -r requirements_embed.txt
-    ```
-
-    Run the script for computing embeddings:
-
-    ```bash
-    python embedCreatorT5Functional.py
-    ```
-
-4. Install dependencies for mainENV:
-
-    ```bash
-    pip install -r requirements_main.txt
-    ```
-
-    Train the model using either:
-
-    ```bash
-    python trainCNN1D.py
-    ```
-
-    or
-
-    ```bash
-    python trainCNN2D.py
-    ```
-
-5. After training, use the prediction scripts for each species:
-
-    ```bash
-    python predict.py
-    ```
-
-6. For users familiar with High Performance Computing (HPC) or Advanced Research Computing (ARC), you can use the provided batch scripts:
-
-    - Use `grtrainv2.sh` to train.
-    - Use `grtest.sh` to predict.
-    - Use `grEmbeddCreator.sh` to compute embeddings.
-
-    Make sure to edit the files and input your appropriate environment and username.
-
-7. The `untils.py` file contains functions used during development, each with a descriptive docstring.
-
-8. `evaluation.py` computes metrics for model predictions.
-
-9. `curvePlot.py` is used to plot ROC and PR curves.  
-
-Feel free to explore, and if you encounter any issues, refer to the documentation or reach out for assistance.
-   
-
-## Project Structure
+Install dependencies with:
 
 ```bash
-C3PI/
-│
-├── dataset/
-│   ├── embd/
-│   │   ├── ecoli/  
-│   │   ├── fly/  
-│   │   ├── human/  
-│   │   ├── interactome/  
-│   │   ├── mouse/  
-│   │   ├── plasminogens/  
-│   │   ├── S_venezuelae/  
-│   │   ├── worm/  
-│   │   └── yeast/
-│   ├── pairs/
-│   └── seq/
-│  
-│
-├── models/
-│   ├── README.md
-│   ├── CNN1D.weight
-│   └── CNN2D.weight
-│
-└── results/
-    ├── ecoli_C3PI.tsv  
-    ├── fly_C3PI.tsv  
-    ├── human_C3PI.tsv  
-    ├── mouse_C3PI.tsv  
-    ├── worm_C3PI.tsv  
-    └── yeast_C3PI.tsv
-
+pip install torch bio-embeddings scikit-learn pyyaml tensorboard
 ```
-## Dependencies
 
-### Python Dependencies
+## Usage
+1. Generate Protein Sequence Embeddings
+``` bash
 
-To install all required Python libraries, you'll need to activate the respective virtual environments and install the libraries listed in the `requirements_embed.txt` and `requirements_main.txt` files. These dependencies ensure that the code executes properly.
+python scripts/run_embedder.py
+```
+This will read sequences from the FASTA file specified in fasta_path and generate embeddings saved in embedding_dir. Existing embeddings are skipped to save time.
 
-Here's a brief overview of some key dependencies:
+2. Train the PPI Model
+``` bash
+python scripts/run_training.py
+```
+Trains the FullPPIModel using training and validation pairs from the configured dataset. Training logs are saved in the directory set by `log_dir`.
 
-- `TensorFlow` and `Keras` - for building and training the neural network models.
-- `scikit-learn` - for various machine learning tools.
-- `pandas` - for data manipulation and analysis.
-- `numpy` - for numerical operations.
-- `matplotlib` and `seaborn` - for plotting graphs and visualizing data.
+3. Run Predictions (Inference)
+```bash
 
-Make sure your system meets these requirements to ensure seamless setup and execution of the model.
+python scripts/run_prediction.py
+```
+(This script runs the trained model on test data and saves raw predictions.)
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+4. Evaluate Model Performance
+```bash
+python scripts/run_evaluation.py
+```
+This script averages predictions in groups (default group size: 8), saves averaged predictions, and computes metrics (accuracy, precision, recall, AUROC, AUPR, F1, MCC) across multiple thresholds.
 
