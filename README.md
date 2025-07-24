@@ -15,11 +15,11 @@ This repository contains code for **C3PI**, a deep learning framework designed f
 │ ├── train.py # Training and validation functions
 │ └── utils.py # Evaluation metrics, averaging, and embedding cleanup utilities
 ├── configs
-│ └── config_gold.yaml # YAML configuration file with dataset paths and training parameters
+│   └── config_gold.yaml  # YAML conf. file with paths and parameters. You must configure this file first, as the default addresses are placeholders.
 ├── data
 │ ├── permutations.npy # Precomputed permutations used for puzzler
 │ └── permute.py # Script to generate diverse permutations with max Hamming distance
-├── scripts
+├── scripts # This directory contains everything you need to run the model, unless you plan to modify its core logic.
 │ ├── run_embedder.py # Script to generate embeddings from FASTA sequences based on config
 │ ├── run_evaluation.py # Script to average predictions and evaluate model performance
 │ ├── run_prediction.py # Script for running model inference
@@ -68,7 +68,8 @@ Trains the FullPPIModel using training and validation pairs from the configured 
 
 python scripts/run_prediction.py
 ```
-(This script runs the trained model on test data and saves raw predictions.)
+(This script runs the trained model on test data and saves the raw predictions. To use the trained model, you need to download the weights by following the instructions in `checkpoints/README.md`.
+)
 
 4. Evaluate Model Performance
 ```bash
