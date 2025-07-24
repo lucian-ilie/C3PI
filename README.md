@@ -57,7 +57,7 @@ python scripts/run_embedder.py
 ```
 This will read sequences from the FASTA file specified in fasta_path and generate embeddings saved in embedding_dir. Existing embeddings are skipped to save time.
 
-2. Train the PPI Model
+2. Train the PPI Model (optional) 
 ``` bash
 python scripts/run_training.py
 ```
