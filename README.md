@@ -1,6 +1,6 @@
 # C3PI: Protein-Protein Interaction Prediction
 
-This repository contains code for **C3PI**, a deep learning framework designed for protein-protein interaction (PPI) prediction using protein sequence embeddings. The project integrates advanced embedding models, multi-scale convolutional neural networks, and robust evaluation pipelines to predict interactions between proteins.
+This repository contains the code for **C3PI**, a deep learning framework designed for protein-protein interaction (PPI) prediction using protein sequence embeddings and transformer architecture.
 
 ---
 
